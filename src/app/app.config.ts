@@ -8,6 +8,8 @@ import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { AuthService } from './core/auth/auth.service';
+import { ProductsService } from './features/products/products.service';
+import { FormsModule } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +19,7 @@ export const appConfig: ApplicationConfig = {
      provideHttpClient(withInterceptors([AuthInterceptor, ErrorInterceptor])),
     AuthApiService,
     ToastService,
-    AuthService
+    AuthService,
+    ProductsService
   ],
 };
